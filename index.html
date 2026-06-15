@@ -3,177 +3,578 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TVJ | FIFA World Cup 2026 Schedule</title>
+<meta name="theme-color" content="#0A0A0A">
+<title>TVJ FIFA World Cup 2026™ Schedule | 104 Matches. One Home.</title>
+<meta name="description" content="All 104 FIFA World Cup 2026™ matches on TVJ. Live and delayed broadcast times in Jamaica time. Search, filter, and never miss a match.">
+<meta property="og:title" content="TVJ FIFA World Cup 2026™: 104 Matches. One Home.">
+<meta property="og:description" content="Every FIFA World Cup 2026™ match on TVJ. All times in Jamaica time.">
+<meta property="og:type" content="website">
 <style>
 :root{
-  --purple:#5B2C86; --yellow:#F7D417; --green:#3AAA35; --cyan:#00AEEF;
-  --black:#0A0A0A; --dark:#161616; --card:#1d1d1f; --line:#2c2c2e; --muted:#9a9aa0;
+  --purple:#5B2C86; --purple2:#7a3fb0; --yellow:#F7D417; --green:#3AAA35; --cyan:#00AEEF;
+  --black:#0A0A0A; --dark:#141417; --card:#1c1c20; --card2:#232328; --line:#2c2c32;
+  --muted:#9a9aa3; --text:#f2f2f4;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,'Segoe UI',Arial,sans-serif;background:var(--black);color:#fff;
-  -webkit-font-smoothing:antialiased;}
-.wrap{max-width:1100px;margin:0 auto;padding:0 16px 80px;}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:var(--black);
+  color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.5;}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px;}
 
-header{background:linear-gradient(135deg,#0a0a0a 0%,#1a0f2e 55%,#2a1647 100%);
-  border-bottom:3px solid var(--yellow);padding:34px 16px 30px;position:relative;overflow:hidden;}
-header::after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;
-  background:radial-gradient(circle,rgba(0,174,239,.25),transparent 70%);}
-.hwrap{max-width:1100px;margin:0 auto;position:relative;z-index:2;}
-.brandrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
-.logo-lockup{height:96px;width:auto;max-width:100%;filter:drop-shadow(0 4px 18px rgba(0,0,0,.45));}
-.tvj{font-weight:900;font-size:30px;letter-spacing:-1px;
-  background:linear-gradient(90deg,var(--purple),var(--cyan),var(--green),var(--yellow));
-  -webkit-background-clip:text;background-clip:text;color:transparent;}
-.tvj span{color:#fff;-webkit-text-fill-color:#fff;}
-.tag{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--yellow);
-  border:1px solid var(--yellow);padding:4px 9px;border-radius:20px;}
-h1{font-size:34px;font-weight:900;margin:16px 0 6px;line-height:1.05;}
-h1 em{font-style:normal;color:var(--yellow);}
-.lede{font-size:16px;font-weight:800;color:var(--yellow);margin:2px 0 10px;letter-spacing:.2px;}
-.sub{color:#cfcfd4;font-size:14px;max-width:640px;}
-.key{margin-top:12px;font-size:13px;color:#e6e6ea;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
-.dot{display:inline-block;width:11px;height:11px;border-radius:50%;vertical-align:middle;margin-right:3px;}
-.dot.g{background:var(--green);} .dot.y{background:var(--yellow);}
+/* ===== TOP BAR ===== */
+.topbar{background:#0a0a0a;border-bottom:1px solid var(--line);padding:10px 0;}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.tb-left{display:flex;align-items:center;gap:10px;}
+.tb-logo{height:30px;width:auto}
+.tb-tag{font-size:10px;font-weight:800;letter-spacing:1.5px;color:var(--yellow);
+  border:1px solid rgba(247,212,23,.5);padding:4px 9px;border-radius:20px;white-space:nowrap;}
+.tb-ig{font-size:12px;color:var(--muted);font-weight:600;}
+.tb-ig:hover{color:var(--cyan)}
 
-.controls{position:sticky;top:0;z-index:30;background:rgba(10,10,10,.94);
-  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 0;margin-bottom:6px;}
-.cwrap{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
-.search{flex:1;min-width:200px;background:var(--card);border:1px solid var(--line);border-radius:10px;
-  padding:11px 14px;color:#fff;font-size:14px;}
-.search::placeholder{color:var(--muted);}
-.search:focus{outline:none;border-color:var(--cyan);}
-.filters{display:flex;gap:7px;}
-.fbtn{background:var(--card);border:1px solid var(--line);color:#cfcfd4;padding:10px 16px;
-  border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;transition:.15s;}
-.fbtn:hover{border-color:#555;}
-.fbtn.on{background:#fff;color:#000;border-color:#fff;}
-.fbtn.on[data-f="LIVE"]{background:var(--green);border-color:var(--green);color:#fff;}
-.fbtn.on[data-f="DELAYED"]{background:var(--yellow);border-color:var(--yellow);color:#000;}
+/* ===== HERO ===== */
+.hero{position:relative;overflow:hidden;
+  background:radial-gradient(1100px 520px at 78% -10%, rgba(91,44,134,.55), transparent 60%),
+             radial-gradient(820px 420px at 8% 8%, rgba(0,174,239,.20), transparent 55%),
+             linear-gradient(180deg,#120c20 0%, #0a0a0a 78%);
+  padding:46px 0 40px;}
+.hero::before{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(115deg, rgba(255,255,255,.018) 0 2px, transparent 2px 26px);
+  pointer-events:none;}
+.hero .wrap{position:relative;z-index:2;text-align:center;}
+.hero-logo{width:min(620px,90%);height:auto;margin:0 auto 22px;display:block;
+  filter:drop-shadow(0 10px 30px rgba(0,0,0,.5));}
+.kicker{font-size:12px;font-weight:800;letter-spacing:2.5px;color:var(--yellow);
+  text-transform:uppercase;margin-bottom:12px;}
+h1{font-size:46px;font-weight:900;letter-spacing:-1.4px;line-height:1.02;margin-bottom:8px;}
+h1 .ny{color:var(--yellow)}
+.lede{font-size:18px;font-weight:800;color:#fff;margin-bottom:6px;}
+.sub{color:#d4d4da;font-size:15px;max-width:640px;margin:0 auto;}
 
-.count{color:var(--muted);font-size:13px;margin:18px 2px 10px;font-weight:600;}
-.daygroup{margin-bottom:26px;}
-.dayhdr{display:flex;align-items:center;gap:10px;margin:0 0 12px;}
-.dayhdr h2{font-size:15px;font-weight:800;color:#fff;letter-spacing:.3px;}
-.dayhdr .line{flex:1;height:1px;background:var(--line);}
+/* ===== COUNTDOWN ===== */
+.count-box{margin:26px auto 6px;max-width:560px;background:rgba(20,20,24,.66);
+  border:1px solid var(--line);border-radius:18px;padding:20px 18px;backdrop-filter:blur(8px);}
+.count-label{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--muted);
+  text-transform:uppercase;margin-bottom:12px;}
+.count-grid{display:flex;justify-content:center;gap:14px;}
+.cu{min-width:66px}
+.cu .n{font-size:38px;font-weight:900;line-height:1;color:#fff;
+  font-variant-numeric:tabular-nums;}
+.cu .l{font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--muted);
+  text-transform:uppercase;margin-top:6px;}
+.cu .n.y{color:var(--yellow)}
+.opener{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;}
+.opener .ot{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--green);
+  text-transform:uppercase;width:100%;}
+.opener .team{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:800;}
+.opener .vs{color:var(--muted);font-weight:700;font-size:13px;}
+.opener .flag{width:26px;height:18px;border-radius:3px;object-fit:cover;
+  box-shadow:0 0 0 1px rgba(255,255,255,.14);}
+.opener .when{width:100%;font-size:13px;color:var(--muted);margin-top:4px;}
 
-.card{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;
+.hero-today{max-width:620px;margin:22px auto 0;}
+.hero-today.empty{display:none;}
+.ht-label{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--cyan);
+  text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;justify-content:center;}
+.ht-label .live-dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);
+  box-shadow:0 0 0 0 rgba(0,174,239,.6);animation:pulse 1.8s infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(0,174,239,.5)}70%{box-shadow:0 0 0 9px rgba(0,174,239,0)}100%{box-shadow:0 0 0 0 rgba(0,174,239,0)}}
+.ht-grid{display:flex;flex-direction:column;gap:8px;}
+.htc{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;
+  background:rgba(20,20,24,.7);border:1px solid var(--line);border-left:3px solid var(--cyan);
+  border-radius:12px;padding:11px 14px;text-align:left;backdrop-filter:blur(6px);}
+.htc.live{border-left-color:var(--green)}
+.htc.delayed{border-left-color:var(--yellow)}
+.htc .hk{font-size:15px;font-weight:900;line-height:1;text-align:center;min-width:50px;}
+.htc .hk small{display:block;font-size:8px;color:var(--muted);letter-spacing:.5px;margin-top:3px;font-weight:700;}
+.htc .ht-teams{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:800;flex-wrap:wrap;}
+.htc .ht-teams .flag{width:20px;height:14px;border-radius:2px;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.13);}
+.htc .ht-teams .vs{color:var(--muted);font-size:11px;font-weight:700;}
+.htc .hp{font-size:9px;font-weight:900;letter-spacing:.6px;padding:4px 9px;border-radius:14px;}
+.htc .hp.live{background:var(--green);color:#fff}
+.htc .hp.delayed{background:var(--yellow);color:#000}
+.htc.ended{opacity:.5;filter:grayscale(.4);}
+.htc .hp.ended{background:#3a3a42;color:#c7c7cf;}
+.cta{display:inline-flex;align-items:center;gap:8px;margin-top:22px;
+  background:var(--yellow);color:#0a0a0a;font-weight:900;font-size:15px;letter-spacing:.3px;
+  padding:14px 28px;border-radius:50px;border:none;cursor:pointer;transition:.15s;}
+.cta:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(247,212,23,.28);}
+
+/* ===== TABS ===== */
+.tabs{position:sticky;top:0;z-index:40;background:rgba(10,10,10,.95);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.tabs .wrap{display:flex;gap:4px;overflow-x:auto;}
+.tab{flex:0 0 auto;background:none;border:none;color:var(--muted);font-weight:800;
+  font-size:14px;padding:16px 18px;cursor:pointer;border-bottom:3px solid transparent;
+  transition:.15s;white-space:nowrap;}
+.tab:hover{color:#fff}
+.tab.on{color:#fff;border-bottom-color:var(--yellow);}
+.tcount{display:none;font-size:10px;font-weight:900;background:var(--cyan);color:#04212e;
+  border-radius:20px;padding:2px 7px;margin-left:6px;vertical-align:middle;}
+.tcount.show{display:inline-block;}
+
+/* ===== SECTIONS ===== */
+section{padding:30px 0;}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;}
+.sec-h h2{font-size:24px;font-weight:900;letter-spacing:-.5px;}
+.sec-h .c{font-size:13px;color:var(--muted);font-weight:700;}
+.sec-sub{color:var(--muted);font-size:14px;margin-bottom:18px;}
+.hidden{display:none}
+
+/* legend */
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin:0 0 18px;font-size:13px;color:#d4d4da;}
+.legend span{display:inline-flex;align-items:center;gap:7px;font-weight:600;}
+.dot{width:11px;height:11px;border-radius:50%;}
+.dot.g{background:var(--green)} .dot.y{background:var(--yellow)}
+
+/* ===== FILTER BAR ===== */
+.filter{background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:14px;margin-bottom:22px;}
+.frow{display:flex;gap:10px;flex-wrap:wrap;}
+.search{flex:1;min-width:200px;background:var(--card2);border:1px solid var(--line);
+  border-radius:10px;padding:12px 14px;color:#fff;font-size:14px;}
+.search::placeholder{color:var(--muted)}
+.search:focus{outline:none;border-color:var(--cyan)}
+select.fsel{background:var(--card2);border:1px solid var(--line);border-radius:10px;
+  padding:12px 14px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;min-width:130px;}
+select.fsel:focus{outline:none;border-color:var(--cyan)}
+.chips{display:flex;gap:7px;margin-top:12px;flex-wrap:wrap;}
+.chip{background:var(--card2);border:1px solid var(--line);color:#cfcfd4;padding:9px 16px;
+  border-radius:30px;font-size:13px;font-weight:700;cursor:pointer;transition:.15s;}
+.chip:hover{border-color:#555}
+.chip.on{background:#fff;color:#000;border-color:#fff;}
+.chip.on[data-f="LIVE"]{background:var(--green);border-color:var(--green);color:#fff;}
+.chip.on[data-f="DELAYED"]{background:var(--yellow);border-color:var(--yellow);color:#000;}
+
+/* ===== MATCH CARDS ===== */
+.daygroup{margin-bottom:24px}
+.dayhdr{display:flex;align-items:center;gap:12px;margin:0 0 12px;position:sticky;}
+.dayhdr h3{font-size:13px;font-weight:800;letter-spacing:.5px;color:var(--yellow);
+  text-transform:uppercase;white-space:nowrap;}
+.dayhdr .line{flex:1;height:1px;background:var(--line)}
+.card{display:grid;grid-template-columns:62px 1fr auto;gap:14px;align-items:center;
   background:var(--card);border:1px solid var(--line);border-left:4px solid var(--line);
-  border-radius:12px;padding:14px 16px;margin-bottom:9px;transition:.15s;}
-.card:hover{border-color:#3a3a3c;transform:translateX(2px);}
-.card.live{border-left-color:var(--green);}
-.card.delayed{border-left-color:var(--yellow);}
-.kick{text-align:center;}
-.kick .t{font-size:18px;font-weight:900;line-height:1;}
-.kick .l{font-size:9px;color:var(--muted);letter-spacing:1px;margin-top:3px;}
-.mid .teams{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:700;flex-wrap:wrap;}
-.flag{width:22px;height:15px;border-radius:2px;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.12);vertical-align:middle;}
-.vs{color:var(--muted);font-weight:600;font-size:13px;}
+  border-radius:14px;padding:14px 16px;margin-bottom:9px;transition:.15s;}
+.card:hover{border-color:#3a3a42;background:var(--card2);transform:translateX(2px);}
+.card.live{border-left-color:var(--green)}
+.card.delayed{border-left-color:var(--yellow)}
+.card.feat{box-shadow:0 0 0 1px rgba(247,212,23,.55)}
+.card.istoday{box-shadow:0 0 0 2px var(--cyan), 0 0 22px rgba(0,174,239,.25);
+  background:linear-gradient(180deg, rgba(0,174,239,.07), var(--card));}
+.card.ended{opacity:.5;filter:grayscale(.4);}
+.card.ended:hover{opacity:.8;}
+.card.ended.istoday{opacity:.62;}
+.ended-badge{display:inline-block;font-size:9px;font-weight:900;letter-spacing:.8px;
+  background:#3a3a42;color:#c7c7cf;padding:3px 8px;border-radius:6px;margin-left:2px;
+  vertical-align:middle;}
+.today-badge{display:inline-block;font-size:9px;font-weight:900;letter-spacing:.8px;
+  background:var(--cyan);color:#04212e;padding:3px 8px;border-radius:6px;margin-left:2px;
+  vertical-align:middle;}
+.kick{text-align:center}
+.kick .t{font-size:17px;font-weight:900;line-height:1.05}
+.kick .l{font-size:9px;color:var(--muted);letter-spacing:1px;margin-top:3px;font-weight:700;}
+.mid .teams{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:800;flex-wrap:wrap;}
+.flag{width:23px;height:16px;border-radius:3px;object-fit:cover;
+  box-shadow:0 0 0 1px rgba(255,255,255,.13);}
+.vs{color:var(--muted);font-weight:700;font-size:12px}
 .meta{margin-top:5px;font-size:12px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap;}
-.meta b{color:#cfcfd4;font-weight:700;}
+.meta b{color:#cfcfd4}
+.rb{color:var(--cyan)}
 .right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px;}
-.pill{font-size:10px;font-weight:800;letter-spacing:.8px;padding:5px 11px;border-radius:20px;}
-.pill.live{background:var(--green);color:#fff;}
-.pill.delayed{background:var(--yellow);color:#000;}
-.btime{font-size:13px;font-weight:700;}
-.btime .lbl{font-size:9px;color:var(--muted);font-weight:600;letter-spacing:.5px;display:block;}
-.rb{font-size:11px;color:var(--cyan);}
-.empty{text-align:center;color:var(--muted);padding:60px 0;font-size:15px;}
-.feat{box-shadow:0 0 0 1px var(--yellow);}
+.pill{font-size:10px;font-weight:900;letter-spacing:.8px;padding:5px 12px;border-radius:20px;}
+.pill.live{background:var(--green);color:#fff}
+.pill.delayed{background:var(--yellow);color:#000}
+.btime{font-size:13px;font-weight:800}
+.btime .lbl{font-size:9px;color:var(--muted);font-weight:700;letter-spacing:.5px;display:block;}
+.empty{text-align:center;color:var(--muted);padding:50px 0;font-size:15px}
 
-footer{text-align:center;color:var(--muted);font-size:12px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line);}
-@media(max-width:600px){
-  .logo-lockup{height:62px;}
-  .card{grid-template-columns:52px 1fr;gap:10px;}
+/* ===== TODAY ===== */
+.today-empty{background:var(--card);border:1px dashed var(--line);border-radius:14px;
+  padding:26px;text-align:center;color:var(--muted);font-size:14px;}
+
+/* ===== WHERE TO WATCH ===== */
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+.wcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;}
+.wcard h4{font-size:15px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.wcard .ch{font-size:13px;color:#d4d4da;padding:5px 0;border-top:1px solid var(--line);}
+.wcard .ch:first-of-type{border-top:none}
+.brandbadge{font-size:10px;font-weight:900;background:var(--purple);color:#fff;
+  padding:3px 8px;border-radius:6px;letter-spacing:.5px;}
+
+/* ===== FOOTER ===== */
+footer{background:linear-gradient(180deg,#0a0a0a,#120c20);border-top:1px solid var(--line);
+  padding:44px 0;text-align:center;margin-top:20px;}
+.f-logo{width:min(380px,80%);height:auto;margin:0 auto 16px;display:block;
+  filter:drop-shadow(0 6px 20px rgba(0,0,0,.5));}
+.f-cta{font-size:22px;font-weight:900;letter-spacing:-.4px;margin-bottom:6px;}
+.f-cta .y{color:var(--yellow)}
+.f-sub{color:var(--muted);font-size:14px;max-width:480px;margin:0 auto 18px;}
+.f-meta{color:#6a6a72;font-size:12px;margin-top:24px;line-height:1.7;}
+.f-meta b{color:var(--muted)}
+
+@media(max-width:680px){
+  h1{font-size:32px;letter-spacing:-1px}
+  .hero-logo{width:88%}
+  .cu .n{font-size:30px}.cu{min-width:54px}
+  .card{grid-template-columns:50px 1fr;gap:10px}
   .right{grid-column:1/3;flex-direction:row;justify-content:space-between;align-items:center;
-    border-top:1px solid var(--line);padding-top:9px;margin-top:3px;}
-  h1{font-size:26px;} .mid .teams{font-size:14px;}
+    border-top:1px solid var(--line);padding-top:9px;margin-top:2px;}
+  .mid .teams{font-size:14px}
+  .sec-h h2{font-size:20px}
 }
 </style>
 </head>
 <body>
-<header>
-  <div class="hwrap">
-    <div class="brandrow">
-      <img class="logo-lockup" src="tvj-fifa-logo.png" alt="FIFA World Cup 2026 × TVJ">
-    </div>
-    <h1>TVJ FIFA World Cup 2026&trade;</h1>
-    <p class="lede">104 Matches. One Home.</p>
-    <p class="sub">All 104 FIFA World Cup 2026&trade; matches will air on TVJ. All times are shown in Jamaica time.</p>
-    <p class="key"><span class="dot g"></span> Green = Live at kick off. &nbsp; <span class="dot y"></span> Yellow = Delayed broadcast at the scheduled airtime.</p>
-  </div>
-</header>
 
-<div class="controls">
-  <div class="cwrap">
-    <input id="search" class="search" placeholder="Search team, group or round...">
-    <div class="filters">
-      <button class="fbtn on" data-f="ALL">All</button>
-      <button class="fbtn" data-f="LIVE">Live</button>
-      <button class="fbtn" data-f="DELAYED">Delayed</button>
+<!-- TOP BAR -->
+<div class="topbar"><div class="wrap">
+  <div class="tb-left">
+    <img class="tb-logo" data-logo="1" src="" alt="TVJ FIFA World Cup 2026">
+    <span class="tb-tag">OFFICIAL BROADCASTER · JAMAICA</span>
+  </div>
+  <a class="tb-ig" href="https://www.instagram.com/televisionjamaica/" target="_blank" rel="noopener">@televisionjamaica</a>
+</div></div>
+
+<!-- HERO -->
+<header class="hero"><div class="wrap">
+  <img class="hero-logo" data-logo="1" src="" alt="TVJ FIFA World Cup 2026">
+  <div class="kicker">FIFA World Cup 2026™ · Jamaica</div>
+  <h1>104 Matches. <span class="ny">One Home.</span></h1>
+  <p class="lede">Every match of the FIFA World Cup 2026™ on TVJ.</p>
+  <p class="sub">All times shown in Jamaica time. Green is live at kick off. Yellow is the delayed broadcast at its scheduled airtime.</p>
+
+  <div class="count-box" id="next-box">
+    <div class="count-label" id="cd-label">Next match kicks off in</div>
+    <div class="count-grid" id="countdown">
+      <div class="cu"><div class="n y" id="cd-d">--</div><div class="l">Days</div></div>
+      <div class="cu"><div class="n" id="cd-h">--</div><div class="l">Hours</div></div>
+      <div class="cu"><div class="n" id="cd-m">--</div><div class="l">Mins</div></div>
+      <div class="cu"><div class="n" id="cd-s">--</div><div class="l">Secs</div></div>
+    </div>
+    <div class="opener" id="next-match"><!-- filled by JS --></div>
+  </div>
+
+  <div class="hero-today" id="hero-today"><!-- filled by JS if matches today --></div>
+
+  <br>
+  <button class="cta" onclick="goTab('schedule')">View Full Schedule</button>
+</div></header>
+
+<!-- TABS -->
+<nav class="tabs"><div class="wrap">
+  <button class="tab on" data-t="schedule" onclick="goTab('schedule')">Schedule</button>
+  <button class="tab" data-t="today" onclick="goTab('today')">Today<span id="today-count" class="tcount"></span></button>
+  <button class="tab" data-t="watch" onclick="goTab('watch')">Where to Watch</button>
+</div></nav>
+
+<!-- TODAY -->
+<section id="sec-today" class="hidden"><div class="wrap">
+  <div class="sec-h"><h2>Today's Matches</h2></div>
+  <p class="sec-sub">What's on TVJ today, in Jamaica time.</p>
+  <div id="today-list"></div>
+</div></section>
+
+<!-- SCHEDULE -->
+<section id="sec-schedule"><div class="wrap">
+  <div class="sec-h"><h2>Match Schedule</h2><span class="c" id="count"></span></div>
+  <div class="legend">
+    <span><span class="dot g"></span> Live at kick off</span>
+    <span><span class="dot y"></span> Delayed broadcast</span>
+    <span style="color:var(--cyan)">RB = rebroadcast</span>
+  </div>
+
+  <div class="filter">
+    <div class="frow">
+      <input id="search" class="search" placeholder="Search team, group or round…">
+      <select class="fsel" id="f-date"><option value="">All Dates</option></select>
+      <select class="fsel" id="f-stage">
+        <option value="">All Stages</option>
+        <option>Group Stage</option><option>Round of 32</option><option>Round of 16</option>
+        <option>Quarter-Final</option><option>Semi-Final</option>
+        <option>Bronze Final</option><option>Final</option>
+      </select>
+      <select class="fsel" id="f-group">
+        <option value="">All Groups</option>
+        <option>Group A</option><option>Group B</option><option>Group C</option>
+        <option>Group D</option><option>Group E</option><option>Group F</option>
+        <option>Group G</option><option>Group H</option><option>Group I</option>
+        <option>Group J</option><option>Group K</option><option>Group L</option>
+      </select>
+    </div>
+    <div class="chips">
+      <button class="chip on" data-f="ALL">All Matches</button>
+      <button class="chip" data-f="LIVE">Live</button>
+      <button class="chip" data-f="DELAYED">Delayed</button>
     </div>
   </div>
-</div>
 
-<div class="wrap">
-  <div class="count" id="count"></div>
   <div id="list"></div>
-  <footer>TVJ &middot; Television Jamaica &middot; RJRGLEANER Communications Group<br>All times Jamaica (JAM). Schedule subject to change. RB = rebroadcast.</footer>
-</div>
+</div></section>
+
+<!-- WHERE TO WATCH -->
+<section id="sec-watch" class="hidden"><div class="wrap">
+  <div class="sec-h"><h2>Where to Watch</h2></div>
+  <p class="sec-sub">TVJ is your home for the FIFA World Cup 2026™ in Jamaica. Watch free-to-air or stream on 1SpotMedia.</p>
+  <div class="watch-grid">
+    <div class="wcard"><h4>Free-to-Air</h4>
+      <div class="ch">TVJ · Television Jamaica</div>
+      <div class="ch">Available nationwide</div></div>
+    <div class="wcard"><h4>Cable & Satellite</h4>
+      <div class="ch">Flow Jamaica</div>
+      <div class="ch">Digicel+ TV</div>
+      <div class="ch">Local cable providers</div></div>
+    <div class="wcard"><h4>Stream <span class="brandbadge">1SPOTMEDIA</span></h4>
+      <div class="ch">Live and on demand</div>
+      <div class="ch">Watch from the diaspora</div>
+      <div class="ch">1spotmedia.com</div></div>
+  </div>
+</div></section>
+
+<!-- FOOTER -->
+<footer><div class="wrap">
+  <img class="f-logo" data-logo="1" src="" alt="TVJ FIFA World Cup 2026">
+  <div class="f-cta">Never miss a match. <span class="y">Watch on TVJ.</span></div>
+  <p class="f-sub">The full FIFA World Cup 2026™ schedule, in Jamaica time, all in one place.</p>
+  <button class="cta" onclick="goTab('schedule')">View Schedule</button>
+  <div class="f-meta">
+    <b>TVJ · Television Jamaica</b> · RJRGLEANER Communications Group<br>
+    Official broadcaster of the FIFA World Cup 2026™ for Jamaica.<br>
+    All times Jamaica (JAM). Schedule subject to change. RB = rebroadcast.
+  </div>
+</div></footer>
 
 <script>
+const LOGO="tvj-fifa-logo.png";document.querySelectorAll('[data-logo]').forEach(i=>i.src=LOGO);
 const DATA = [{"date": "Thu Jun 11", "kick": "2:00 PM", "no": "1", "match": "Mexico vs South Africa", "rg": "Group A", "status": "LIVE", "btime": "2:00 PM", "rb": "12:30 AM"}, {"date": "Fri Jun 12", "kick": "9:00 PM", "no": "2", "match": "South Korea vs Czechia", "rg": "Group A", "status": "LIVE", "btime": "9:00 PM", "rb": "12-2 PM"}, {"date": "Sat Jun 13", "kick": "2:00 PM", "no": "3", "match": "Canada vs Bosnia & Herzegovina", "rg": "Group B", "status": "LIVE", "btime": "2:00 PM", "rb": "11 PM"}, {"date": "Sat Jun 13", "kick": "8:00 PM", "no": "4", "match": "USA vs Paraguay", "rg": "Group D", "status": "DELAYED", "btime": "Jun 13 @ 3 AM", "rb": ""}, {"date": "Sat Jun 13", "kick": "2:00 PM", "no": "8", "match": "Qatar vs Switzerland", "rg": "Group B", "status": "LIVE", "btime": "2:00 PM", "rb": ""}, {"date": "Sat Jun 13", "kick": "5:00 PM", "no": "7", "match": "Brazil vs Morocco", "rg": "Group C", "status": "LIVE", "btime": "5:00 PM", "rb": ""}, {"date": "Sat Jun 13", "kick": "8:00 PM", "no": "5", "match": "Haiti vs Scotland", "rg": "Group C", "status": "LIVE", "btime": "8:00 PM", "rb": ""}, {"date": "Sat Jun 13", "kick": "11:00 PM", "no": "6", "match": "Australia vs Turkiye", "rg": "Group D", "status": "DELAYED", "btime": "Jun 14 @ 3 AM", "rb": "11 PM"}, {"date": "Sun Jun 14", "kick": "12:00 PM", "no": "10", "match": "Germany vs Curacao", "rg": "Group E", "status": "LIVE", "btime": "12:00 PM", "rb": "3 AM"}, {"date": "Sun Jun 14", "kick": "3:00 PM", "no": "11", "match": "Netherlands vs Japan", "rg": "Group F", "status": "LIVE", "btime": "3:00 PM", "rb": ""}, {"date": "Sun Jun 14", "kick": "6:00 PM", "no": "9", "match": "Cote d'Ivoire vs Ecuador", "rg": "Group E", "status": "DELAYED", "btime": "11:30 PM", "rb": "9 PM"}, {"date": "Sun Jun 14", "kick": "9:00 PM", "no": "12", "match": "Sweden vs Tunisia", "rg": "Group F", "status": "DELAYED", "btime": "Jun 15 @ 4 AM", "rb": ""}, {"date": "Mon Jun 15", "kick": "11:00 AM", "no": "14", "match": "Spain vs Cabo Verde", "rg": "Group H", "status": "DELAYED", "btime": "5 PM", "rb": "8:30 AM"}, {"date": "Mon Jun 15", "kick": "2:00 PM", "no": "16", "match": "Belgium vs Egypt", "rg": "Group G", "status": "LIVE", "btime": "2:00 PM", "rb": ""}, {"date": "Mon Jun 15", "kick": "5:00 PM", "no": "13", "match": "Saudi Arabia vs Uruguay", "rg": "Group H", "status": "DELAYED", "btime": "Jun 16 @ 12 AM", "rb": ""}, {"date": "Mon Jun 15", "kick": "8:00 PM", "no": "15", "match": "Iran vs New Zealand", "rg": "Group G", "status": "LIVE", "btime": "8:00 PM", "rb": ""}, {"date": "Tue Jun 16", "kick": "2:00 PM", "no": "17", "match": "France vs Senegal", "rg": "Group I", "status": "LIVE", "btime": "2:00 PM", "rb": "3 AM"}, {"date": "Tue Jun 16", "kick": "5:00 PM", "no": "18", "match": "Iraq vs Norway", "rg": "Group I", "status": "LIVE", "btime": "5:00 PM", "rb": ""}, {"date": "Tue Jun 16", "kick": "8:00 PM", "no": "19", "match": "Argentina vs Algeria", "rg": "Group J", "status": "DELAYED", "btime": "11 PM", "rb": ""}, {"date": "Tue Jun 16", "kick": "11:00 PM", "no": "20", "match": "Austria vs Jordan", "rg": "Group J", "status": "DELAYED", "btime": "Jun 17 @ 8:35 AM", "rb": ""}, {"date": "Wed Jun 17", "kick": "12:00 PM", "no": "23", "match": "Portugal vs DR Congo", "rg": "Group K", "status": "LIVE", "btime": "12:00 PM", "rb": "1 AM"}, {"date": "Wed Jun 17", "kick": "3:00 PM", "no": "22", "match": "England vs Croatia", "rg": "Group L", "status": "DELAYED", "btime": "11:30 PM", "rb": "3 AM"}, {"date": "Wed Jun 17", "kick": "6:00 PM", "no": "21", "match": "Ghana vs Panama", "rg": "Group L", "status": "LIVE", "btime": "6:00 PM", "rb": ""}, {"date": "Wed Jun 17", "kick": "9:00 PM", "no": "24", "match": "Uzbekistan vs Colombia", "rg": "Group K", "status": "DELAYED", "btime": "Jun 18 @ 4 AM", "rb": ""}, {"date": "Thu Jun 18", "kick": "11:00 AM", "no": "25", "match": "Czechia vs South Africa", "rg": "Group A", "status": "LIVE", "btime": "11:00 AM", "rb": ""}, {"date": "Thu Jun 18", "kick": "2:00 PM", "no": "26", "match": "Switzerland vs Bosnia & Herzegovina", "rg": "Group B", "status": "DELAYED", "btime": "11 PM", "rb": ""}, {"date": "Thu Jun 18", "kick": "5:00 PM", "no": "27", "match": "Canada vs Qatar", "rg": "Group B", "status": "LIVE", "btime": "5:00 PM", "rb": ""}, {"date": "Thu Jun 18", "kick": "8:00 PM", "no": "28", "match": "Mexico vs South Korea", "rg": "Group A", "status": "DELAYED", "btime": "Jun 19 @ 4 AM", "rb": "1 AM"}, {"date": "Fri Jun 19", "kick": "2:00 PM", "no": "32", "match": "USA vs Australia", "rg": "Group D", "status": "LIVE", "btime": "2:00 PM", "rb": "8:30 AM"}, {"date": "Fri Jun 19", "kick": "5:00 PM", "no": "30", "match": "Scotland vs Morocco", "rg": "Group C", "status": "LIVE", "btime": "5:00 PM", "rb": ""}, {"date": "Fri Jun 19", "kick": "7:30 PM", "no": "29", "match": "Brazil vs Haiti", "rg": "Group C", "status": "DELAYED", "btime": "11:30 PM", "rb": ""}, {"date": "Fri Jun 19", "kick": "10:00 PM", "no": "31", "match": "Turkiye vs Paraguay", "rg": "Group D", "status": "DELAYED", "btime": "Jun 20 @ 8:35 AM", "rb": ""}, {"date": "Sat Jun 20", "kick": "12:00 PM", "no": "35", "match": "Netherlands vs Sweden", "rg": "Group F", "status": "DELAYED", "btime": "Jun 21 @ 10:35 AM", "rb": "3 AM"}, {"date": "Sat Jun 20", "kick": "3:00 PM", "no": "33", "match": "Germany vs Ivory Coast", "rg": "Group E", "status": "LIVE", "btime": "3:00 PM", "rb": ""}, {"date": "Sat Jun 20", "kick": "7:00 PM", "no": "34", "match": "Ecuador vs Curacao", "rg": "Group E", "status": "DELAYED", "btime": "Jun 21 @ 1 AM", "rb": ""}, {"date": "Sat Jun 20", "kick": "11:00 PM", "no": "36", "match": "Tunisia vs Japan", "rg": "Group F", "status": "LIVE", "btime": "11:00 PM", "rb": ""}, {"date": "Sun Jun 21", "kick": "11:00 AM", "no": "38", "match": "Spain vs Saudi Arabia", "rg": "Group H", "status": "DELAYED", "btime": "11:30 PM", "rb": ""}, {"date": "Sun Jun 21", "kick": "2:00 PM", "no": "39", "match": "Belgium vs Iran", "rg": "Group G", "status": "LIVE", "btime": "2:00 PM", "rb": "9 PM"}, {"date": "Sun Jun 21", "kick": "5:00 PM", "no": "37", "match": "Uruguay vs Cabo Verde", "rg": "Group H", "status": "DELAYED", "btime": "Jun 22 @ 4 AM", "rb": ""}, {"date": "Sun Jun 21", "kick": "8:00 PM", "no": "40", "match": "New Zealand vs Egypt", "rg": "Group G", "status": "LIVE", "btime": "8:00 PM", "rb": ""}, {"date": "Mon Jun 22", "kick": "12:00 PM", "no": "43", "match": "Argentina vs Austria", "rg": "Group J", "status": "LIVE", "btime": "12:00 PM", "rb": "8:30 AM"}, {"date": "Mon Jun 22", "kick": "4:00 PM", "no": "42", "match": "France vs Iraq", "rg": "Group I", "status": "DELAYED", "btime": "Jun 23 @ 3 AM", "rb": "1 PM"}, {"date": "Mon Jun 22", "kick": "7:00 PM", "no": "41", "match": "Norway vs Senegal", "rg": "Group I", "status": "DELAYED", "btime": "Jun 23 @ 8:30 AM", "rb": ""}, {"date": "Mon Jun 22", "kick": "10:00 PM", "no": "44", "match": "Jordan vs Algeria", "rg": "Group J", "status": "LIVE", "btime": "10:00 PM", "rb": ""}, {"date": "Tue Jun 23", "kick": "12:00 PM", "no": "47", "match": "Portugal vs Uzbekistan", "rg": "Group K", "status": "DELAYED", "btime": "11:30 PM", "rb": "12 AM"}, {"date": "Tue Jun 23", "kick": "3:00 PM", "no": "45", "match": "England vs Ghana", "rg": "Group L", "status": "LIVE", "btime": "3:00 PM", "rb": ""}, {"date": "Tue Jun 23", "kick": "6:00 PM", "no": "46", "match": "Panama vs Croatia", "rg": "Group L", "status": "DELAYED", "btime": "Jun 24 @ 8:30 AM", "rb": ""}, {"date": "Tue Jun 23", "kick": "9:00 PM", "no": "48", "match": "Colombia vs DR Congo", "rg": "Group K", "status": "LIVE", "btime": "9:00 PM", "rb": ""}, {"date": "Wed Jun 24", "kick": "2:00 PM", "no": "51", "match": "Switzerland vs Canada", "rg": "Group B", "status": "LIVE", "btime": "2:00 PM", "rb": "3 AM"}, {"date": "Wed Jun 24", "kick": "2:00 PM", "no": "52", "match": "Bosnia & Herzegovina vs Qatar", "rg": "Group B", "status": "DELAYED", "btime": "11:30 PM", "rb": ""}, {"date": "Wed Jun 24", "kick": "5:00 PM", "no": "49", "match": "Scotland vs Brazil", "rg": "Group C", "status": "DELAYED", "btime": "Jun 25 @ 2 AM", "rb": ""}, {"date": "Wed Jun 24", "kick": "5:00 PM", "no": "50", "match": "Morocco vs Haiti", "rg": "Group C", "status": "DELAYED", "btime": "Jun 25 @ 4 AM", "rb": ""}, {"date": "Wed Jun 24", "kick": "8:00 PM", "no": "53", "match": "Czechia vs Mexico", "rg": "Group A", "status": "LIVE", "btime": "8:00 PM", "rb": ""}, {"date": "Wed Jun 24", "kick": "8:00 PM", "no": "54", "match": "South Africa vs South Korea", "rg": "Group A", "status": "DELAYED", "btime": "Jun 25 @ 8:30 AM", "rb": ""}, {"date": "Thu Jun 25", "kick": "3:00 PM", "no": "55", "match": "Curacao vs Cote d'Ivoire", "rg": "Group E", "status": "LIVE", "btime": "3:00 PM", "rb": ""}, {"date": "Thu Jun 25", "kick": "3:00 PM", "no": "56", "match": "Ecuador vs Germany", "rg": "Group E", "status": "DELAYED", "btime": "11:30 PM", "rb": ""}, {"date": "Thu Jun 25", "kick": "6:00 PM", "no": "57", "match": "Japan vs Sweden", "rg": "Group F", "status": "LIVE", "btime": "6:00 PM", "rb": ""}, {"date": "Thu Jun 25", "kick": "6:00 PM", "no": "58", "match": "Tunisia vs Netherlands", "rg": "Group F", "status": "DELAYED", "btime": "Jun 26 @ 2 AM", "rb": ""}, {"date": "Thu Jun 25", "kick": "9:00 PM", "no": "59", "match": "Turkiye vs USA", "rg": "Group D", "status": "LIVE", "btime": "9:00 PM", "rb": ""}, {"date": "Thu Jun 25", "kick": "9:00 PM", "no": "60", "match": "Paraguay vs Australia", "rg": "Group D", "status": "DELAYED", "btime": "Jun 26 @ 4 AM", "rb": ""}, {"date": "Fri Jun 26", "kick": "2:00 PM", "no": "61", "match": "Norway vs France", "rg": "Group I", "status": "DELAYED", "btime": "Jun 27 @ 12:30 AM", "rb": "8:30 AM"}, {"date": "Fri Jun 26", "kick": "2:00 PM", "no": "62", "match": "Senegal vs Iraq", "rg": "Group I", "status": "LIVE", "btime": "2:00 PM", "rb": ""}, {"date": "Fri Jun 26", "kick": "7:00 PM", "no": "65", "match": "Cabo Verde vs Saudi Arabia", "rg": "Group H", "status": "DELAYED", "btime": "Jun 27 @ 3 AM", "rb": ""}, {"date": "Fri Jun 26", "kick": "7:00 PM", "no": "66", "match": "Uruguay vs Spain", "rg": "Group H", "status": "LIVE", "btime": "7:00 PM", "rb": ""}, {"date": "Fri Jun 26", "kick": "10:00 PM", "no": "63", "match": "Egypt vs Iran", "rg": "Group G", "status": "DELAYED", "btime": "Jun 27 @ 8:30 AM", "rb": ""}, {"date": "Fri Jun 26", "kick": "10:00 PM", "no": "64", "match": "New Zealand vs Belgium", "rg": "Group G", "status": "LIVE", "btime": "10:00 PM", "rb": ""}, {"date": "Sat Jun 27", "kick": "4:00 PM", "no": "67", "match": "Panama vs England", "rg": "Group L", "status": "LIVE", "btime": "4:00 PM", "rb": ""}, {"date": "Sat Jun 27", "kick": "4:00 PM", "no": "68", "match": "Croatia vs Ghana", "rg": "Group L", "status": "DELAYED", "btime": "11:30 PM", "rb": ""}, {"date": "Sat Jun 27", "kick": "6:30 PM", "no": "71", "match": "Colombia vs Portugal", "rg": "Group K", "status": "DELAYED", "btime": "Jun 28 @ 3 AM", "rb": "1 PM"}, {"date": "Sat Jun 27", "kick": "6:30 PM", "no": "72", "match": "DR Congo vs Uzbekistan", "rg": "Group K", "status": "LIVE", "btime": "6:30 PM", "rb": ""}, {"date": "Sat Jun 27", "kick": "9:00 PM", "no": "69", "match": "Algeria vs Austria", "rg": "Group J", "status": "DELAYED", "btime": "Jun 28 @ 10:30 AM", "rb": ""}, {"date": "Sat Jun 27", "kick": "9:00 PM", "no": "70", "match": "Jordan vs Argentina", "rg": "Group J", "status": "LIVE", "btime": "9:00 PM", "rb": ""}, {"date": "Sun Jun 28", "kick": "2:00 PM", "no": "73", "match": "2A vs 2B", "rg": "Round of 32", "status": "LIVE", "btime": "2:00 PM", "rb": "9 PM"}, {"date": "Mon Jun 29", "kick": "12:00 PM", "no": "76", "match": "1C vs 2F", "rg": "Round of 32", "status": "LIVE", "btime": "12:00 PM", "rb": "4 AM"}, {"date": "Mon Jun 29", "kick": "3:30 PM", "no": "74", "match": "1E vs 3ABCDF", "rg": "Round of 32", "status": "DELAYED", "btime": "11:30 PM", "rb": ""}, {"date": "Mon Jun 29", "kick": "8:00 PM", "no": "75", "match": "1F vs 2C", "rg": "Round of 32", "status": "DELAYED", "btime": "Jun 30 @ 3 PM", "rb": ""}, {"date": "Tue Jun 30", "kick": "12:00 PM", "no": "78", "match": "2E vs 2I", "rg": "Round of 32", "status": "DELAYED", "btime": "11:30 PM", "rb": ""}, {"date": "Tue Jun 30", "kick": "4:00 PM", "no": "77", "match": "1I vs 3CDFGH", "rg": "Round of 32", "status": "DELAYED", "btime": "Jul 1 @ 3 AM", "rb": ""}, {"date": "Tue Jun 30", "kick": "8:00 PM", "no": "79", "match": "1A vs 3CEFHI", "rg": "Round of 32", "status": "LIVE", "btime": "8:00 PM", "rb": "11:30 PM"}, {"date": "Wed Jul 1", "kick": "11:00 AM", "no": "80", "match": "1L vs 3EHIJK", "rg": "Round of 32", "status": "LIVE", "btime": "11:00 AM", "rb": "2:30 AM"}, {"date": "Wed Jul 1", "kick": "3:00 PM", "no": "82", "match": "1G vs 3AEHIJ", "rg": "Round of 32", "status": "LIVE", "btime": "3:00 PM", "rb": ""}, {"date": "Wed Jul 1", "kick": "7:00 PM", "no": "81", "match": "1D vs 3BEFIJ", "rg": "Round of 32", "status": "DELAYED", "btime": "Jul 2 @ 12 AM", "rb": ""}, {"date": "Thu Jul 2", "kick": "2:00 PM", "no": "84", "match": "1H vs 2J", "rg": "Round of 32", "status": "LIVE", "btime": "2:00 PM", "rb": "3:30 AM"}, {"date": "Thu Jul 2", "kick": "6:00 PM", "no": "83", "match": "2K vs 2L", "rg": "Round of 32", "status": "DELAYED", "btime": "Jul 3 @ 3:30 AM", "rb": ""}, {"date": "Thu Jul 2", "kick": "10:00 PM", "no": "85", "match": "1B vs 3EFGIJ", "rg": "Round of 32", "status": "LIVE", "btime": "10:00 PM", "rb": ""}, {"date": "Fri Jul 3", "kick": "1:00 PM", "no": "88", "match": "2D vs 2G", "rg": "Round of 32", "status": "DELAYED", "btime": "11:30 PM", "rb": "1 AM"}, {"date": "Fri Jul 3", "kick": "5:00 PM", "no": "86", "match": "1J vs 2H", "rg": "Round of 32", "status": "DELAYED", "btime": "Jul 4 @ 2:30 AM", "rb": ""}, {"date": "Fri Jul 3", "kick": "8:30 PM", "no": "87", "match": "1K vs 3DEIJL", "rg": "Round of 32", "status": "LIVE", "btime": "8:30 PM", "rb": "2 PM"}, {"date": "Sat Jul 4", "kick": "12:00 PM", "no": "90", "match": "W73 vs W75", "rg": "Round of 16", "status": "LIVE", "btime": "12:00 PM", "rb": ""}, {"date": "Sat Jul 4", "kick": "4:00 PM", "no": "89", "match": "W74 vs W77", "rg": "Round of 16", "status": "LIVE", "btime": "4:00 PM", "rb": ""}, {"date": "Sun Jul 5", "kick": "3:00 PM", "no": "91", "match": "W76 vs W78", "rg": "Round of 16", "status": "DELAYED", "btime": "9 PM", "rb": "3 PM"}, {"date": "Sun Jul 5", "kick": "7:00 PM", "no": "92", "match": "W79 vs W80", "rg": "Round of 16", "status": "DELAYED", "btime": "11:30 PM", "rb": ""}, {"date": "Mon Jul 6", "kick": "2:00 PM", "no": "93", "match": "W83 vs W84", "rg": "Round of 16", "status": "LIVE", "btime": "2:00 PM", "rb": "3 AM"}, {"date": "Mon Jul 6", "kick": "7:00 PM", "no": "94", "match": "W81 vs W82", "rg": "Round of 16", "status": "DELAYED", "btime": "Jul 7 @ 2:30 AM", "rb": ""}, {"date": "Tue Jul 7", "kick": "11:00 AM", "no": "95", "match": "W86 vs W88", "rg": "Round of 16", "status": "LIVE", "btime": "11:00 AM", "rb": "12 AM"}, {"date": "Tue Jul 7", "kick": "3:00 PM", "no": "96", "match": "W85 vs W87", "rg": "Round of 16", "status": "DELAYED", "btime": "9:30 PM", "rb": ""}, {"date": "Thu Jul 9", "kick": "3:00 PM", "no": "97", "match": "W89 vs W90", "rg": "Quarter-Final", "status": "DELAYED", "btime": "Jul 10 @ 3 AM", "rb": ""}, {"date": "Fri Jul 10", "kick": "2:00 PM", "no": "98", "match": "W93 vs W94", "rg": "Quarter-Final", "status": "LIVE", "btime": "2:00 PM", "rb": "9:15 PM"}, {"date": "Fri Jul 10", "kick": "4:00 PM", "no": "99", "match": "W91 vs W92", "rg": "Quarter-Final", "status": "LIVE", "btime": "4:00 PM", "rb": "10:30 AM"}, {"date": "Fri Jul 10", "kick": "9:00 PM", "no": "100", "match": "W95 vs W96", "rg": "Quarter-Final", "status": "DELAYED", "btime": "Jul 12 @ 9 PM", "rb": ""}, {"date": "Tue Jul 14", "kick": "2:00 PM", "no": "101", "match": "W97 vs W98", "rg": "Semi-Final", "status": "LIVE", "btime": "2:00 PM", "rb": "11 PM"}, {"date": "Wed Jul 15", "kick": "2:00 PM", "no": "102", "match": "W99 vs W100", "rg": "Semi-Final", "status": "DELAYED", "btime": "9:30 PM", "rb": "1 PM"}, {"date": "Sat Jul 18", "kick": "4:00 PM", "no": "103", "match": "Bronze Final (Third Place)", "rg": "Bronze Final", "status": "LIVE", "btime": "4:00 PM", "rb": "8:30 PM"}, {"date": "Sun Jul 19", "kick": "2:00 PM", "no": "104", "match": "THE FINAL", "rg": "Final", "status": "LIVE", "btime": "2:00 PM", "rb": "9 PM"}];
 const FLAGS = {"Mexico": "mx", "South Africa": "za", "South Korea": "kr", "Czechia": "cz", "Canada": "ca", "Bosnia & Herzegovina": "ba", "USA": "us", "Paraguay": "py", "Qatar": "qa", "Switzerland": "ch", "Brazil": "br", "Morocco": "ma", "Haiti": "ht", "Scotland": "gb-sct", "Australia": "au", "Turkiye": "tr", "Germany": "de", "Curacao": "cw", "Netherlands": "nl", "Japan": "jp", "Cote d'Ivoire": "ci", "Ecuador": "ec", "Sweden": "se", "Tunisia": "tn", "Spain": "es", "Cabo Verde": "cv", "Belgium": "be", "Egypt": "eg", "Saudi Arabia": "sa", "Uruguay": "uy", "Iran": "ir", "New Zealand": "nz", "France": "fr", "Senegal": "sn", "Iraq": "iq", "Norway": "no", "Argentina": "ar", "Algeria": "dz", "Austria": "at", "Jordan": "jo", "Portugal": "pt", "DR Congo": "cd", "England": "gb-eng", "Croatia": "hr", "Ghana": "gh", "Panama": "pa", "Uzbekistan": "uz", "Colombia": "co", "Ivory Coast": "ci"};
-let filter="ALL", q="";
+let filter="ALL", q="", fdate="", fstage="", fgroup="";
 
+// ---- build a real Date (JAM = EST, UTC-5, no DST) for each match ----
+const MONTHS={Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+function parseKick(m){
+  const p=m.date.split(" ");            // ["Thu","Jun","11"]
+  const mon=MONTHS[p[1]], day=parseInt(p[2],10);
+  const tm=m.kick.match(/(\d+):(\d+)\s*(AM|PM)/i);
+  let hh=parseInt(tm[1],10), mm=parseInt(tm[2],10);
+  const ap=tm[3].toUpperCase();
+  if(ap==="PM" && hh!==12) hh+=12;
+  if(ap==="AM" && hh===12) hh=0;
+  // JAM is UTC-5 year-round -> UTC = local + 5
+  return new Date(Date.UTC(2026, mon, day, hh+5, mm, 0));
+}
+DATA.forEach(m=>{ m._dt = parseKick(m); });
+
+// ---- helpers ----
 function flagImg(name){
   const code=FLAGS[name.trim()];
-  if(!code) return "";
-  return '<img class="flag" src="https://flagcdn.com/'+code+'.svg" alt="'+name+'" loading="lazy">';
+  return code ? '<img class="flag" src="https://flagcdn.com/'+code+'.svg" alt="'+name+'" loading="lazy">' : '';
 }
 function teamHTML(match){
   if(match.indexOf(" vs ")===-1) return '<span>'+match+'</span>';
   const [a,b]=match.split(" vs ");
   return flagImg(a)+'<span>'+a+'</span><span class="vs">vs</span>'+flagImg(b)+'<span>'+b+'</span>';
 }
+function stageOf(rg){
+  if(rg.indexOf("Group")>-1) return "Group Stage";
+  return rg;
+}
+function isToday(m){
+  const now=new Date();
+  const jam=new Date(m._dt.getTime()-5*3600*1000);
+  return jam.getUTCFullYear()===now.getFullYear()
+      && jam.getUTCMonth()===now.getMonth()
+      && jam.getUTCDate()===now.getDate();
+}
+function isEnded(m){
+  // match considered ended ~2h after kick-off (covers 90 mins + stoppage/half-time)
+  return Date.now() > (m._dt.getTime() + 2*3600*1000);
+}
+function cardHTML(m){
+  const cls=m.status==="LIVE"?"live":"delayed";
+  const feat=(m.match==="THE FINAL"||m.match.indexOf("Haiti")>-1)?" feat":"";
+  const td=isToday(m)?" istoday":"";
+  const ended=isEnded(m);
+  const endCls=ended?" ended":"";
+  let badge="";
+  if(ended) badge='<span class="ended-badge">ENDED</span>';
+  else if(isToday(m)) badge='<span class="today-badge">TODAY</span>';
+  return '<div class="card '+cls+feat+td+endCls+'">'
+    +'<div class="kick"><div class="t">'+m.kick.replace(" ","<br>")+'</div><div class="l">KICK-OFF</div></div>'
+    +'<div class="mid"><div class="teams">'+teamHTML(m.match)+' '+badge+'</div>'
+      +'<div class="meta"><span><b>#'+m.no+'</b></span><span>'+m.rg+'</span>'
+      +(m.rb?'<span class="rb">RB '+m.rb+'</span>':'')+'</div></div>'
+    +'<div class="right"><span class="pill '+cls+'">'+m.status+'</span>'
+      +'<div class="btime"><span class="lbl">ON TVJ</span>'+m.btime+'</div></div>'
+    +'</div>';
+}
+
+// ---- populate date filter ----
+(function(){
+  const seen=[], sel=document.getElementById("f-date");
+  DATA.forEach(m=>{ if(seen.indexOf(m.date)===-1) seen.push(m.date); });
+  seen.forEach(d=>{ const o=document.createElement("option"); o.value=d; o.textContent=d; sel.appendChild(o); });
+})();
+
+// ---- schedule render ----
 function render(){
   const list=document.getElementById("list");
   let rows=DATA.filter(m=>{
     if(filter!=="ALL" && m.status!==filter) return false;
-    if(q){
-      const s=(m.match+" "+m.rg+" "+m.date).toLowerCase();
-      if(!s.includes(q)) return false;
-    }
+    if(fdate && m.date!==fdate) return false;
+    if(fstage && stageOf(m.rg)!==fstage) return false;
+    if(fgroup && m.rg!==fgroup) return false;
+    if(q){ const s=(m.match+" "+m.rg+" "+m.date).toLowerCase(); if(!s.includes(q)) return false; }
     return true;
   });
   document.getElementById("count").textContent=rows.length+" of "+DATA.length+" matches";
-  if(!rows.length){ list.innerHTML='<div class="empty">No matches found.</div>'; return; }
-  let html="", lastDate="";
+  if(!rows.length){ list.innerHTML='<div class="empty">No matches found. Try clearing a filter.</div>'; return; }
+  let html="", last="";
   rows.forEach(m=>{
-    if(m.date!==lastDate){
-      if(lastDate!=="") html+="</div>";
-      html+='<div class="daygroup"><div class="dayhdr"><h2>'+m.date+'</h2><div class="line"></div></div>';
-      lastDate=m.date;
+    if(m.date!==last){
+      if(last!=="") html+="</div>";
+      const todayTag = isToday(m) ? ' <span class="today-badge">TODAY</span>' : '';
+      html+='<div class="daygroup"><div class="dayhdr"><h3>'+m.date+todayTag+'</h3><div class="line"></div></div>';
+      last=m.date;
     }
-    const cls=m.status==="LIVE"?"live":"delayed";
-    const feat=(m.match==="THE FINAL"||m.match.indexOf("Haiti")>-1)?" feat":"";
-    html+='<div class="card '+cls+feat+'">'
-      +'<div class="kick"><div class="t">'+m.kick.replace(" ","<br>")+'</div><div class="l">KICK-OFF</div></div>'
-      +'<div class="mid"><div class="teams">'+teamHTML(m.match)+'</div>'
-        +'<div class="meta"><span><b>#'+m.no+'</b></span><span>'+m.rg+'</span>'
-        +(m.rb?'<span class="rb">RB '+m.rb+'</span>':'')+'</div></div>'
-      +'<div class="right"><span class="pill '+cls+'">'+m.status+'</span>'
-        +'<div class="btime"><span class="lbl">ON TVJ</span>'+m.btime+'</div></div>'
-      +'</div>';
+    html+=cardHTML(m);
   });
   html+="</div>";
   list.innerHTML=html;
 }
+
+// ---- today render ----
+function renderToday(){
+  const now=new Date();
+  const y=now.getFullYear(), mo=now.getMonth(), d=now.getDate();
+  let rows=DATA.filter(m=>{
+    const dt=m._dt;
+    // compare in JAM local terms: shift UTC back by 5h
+    const jam=new Date(dt.getTime()-5*3600*1000);
+    return jam.getUTCFullYear()===y && jam.getUTCMonth()===mo && jam.getUTCDate()===d;
+  });
+  const el=document.getElementById("today-list");
+  if(!rows.length){
+    el.innerHTML='<div class="today-empty">No FIFA World Cup matches on TVJ today.<br>Check the full <a style="color:var(--yellow);font-weight:700" href="#" onclick="goTab(\'schedule\');return false">schedule</a> for upcoming matches.</div>';
+    return;
+  }
+  el.innerHTML=rows.map(cardHTML).join("");
+}
+
+// ---- tabs ----
+function goTab(t){
+  document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x.dataset.t===t));
+  ["schedule","today","watch"].forEach(s=>{
+    document.getElementById("sec-"+s).classList.toggle("hidden",s!==t);
+  });
+  if(t==="today") renderToday();
+  window.scrollTo({top:document.querySelector(".tabs").offsetTop-1,behavior:"smooth"});
+}
+
+// ---- next match + countdown ----
+function nextMatch(){
+  const now=new Date();
+  // upcoming = kick-off still in the future; else fall back to last match
+  const up=DATA.filter(m=>m._dt.getTime() > now.getTime()).sort((a,b)=>a._dt-b._dt);
+  return up.length ? up[0] : null;
+}
+function fillNextHero(m){
+  const box=document.getElementById("next-match");
+  const lbl=document.getElementById("cd-label");
+  if(!m){
+    lbl.textContent="The tournament has ended";
+    box.innerHTML='<div class="ot">FIFA World Cup 2026™ · Complete</div>'
+      +'<div class="when">Catch rebroadcasts and highlights on TVJ.</div>';
+    return;
+  }
+  lbl.textContent="Next match kicks off in";
+  const isOpener=(m.no==="1");
+  const tagTxt=(isOpener?"Opening Match · ":"")+m.date;
+  let teams;
+  if(m.match.indexOf(" vs ")>-1){
+    const [a,b]=m.match.split(" vs ");
+    teams='<div class="team">'+flagImg(a)+a+'</div><div class="vs">vs</div>'
+         +'<div class="team">'+flagImg(b)+b+'</div>';
+  } else {
+    teams='<div class="team">'+m.match+'</div>';
+  }
+  const live=(m.status==="LIVE");
+  box.innerHTML='<div class="ot">'+tagTxt+' · '+m.rg+'</div>'+teams
+    +'<div class="when">Kick off '+m.kick+' JAM · '
+    +(live?'Live on TVJ':'Delayed broadcast '+m.btime+' on TVJ')+'</div>';
+}
+let NEXT=nextMatch();
+fillNextHero(NEXT);
+
+// ---- today strip in hero ----
+function fillHeroToday(){
+  const el=document.getElementById("hero-today");
+  const rows=DATA.filter(isToday);
+  if(!rows.length){ el.classList.add("empty"); el.innerHTML=""; return; }
+  let cards=rows.map(m=>{
+    const cls=m.status==="LIVE"?"live":"delayed";
+    const endCls=isEnded(m)?" ended":"";
+    let teams;
+    if(m.match.indexOf(" vs ")>-1){
+      const [a,b]=m.match.split(" vs ");
+      teams=flagImg(a)+'<span>'+a+'</span><span class="vs">v</span>'+flagImg(b)+'<span>'+b+'</span>';
+    } else { teams='<span>'+m.match+'</span>'; }
+    const stTxt=isEnded(m)?'ENDED':m.status;
+    const stCls=isEnded(m)?'ended':cls;
+    return '<div class="htc '+cls+endCls+'">'
+      +'<div class="hk">'+m.kick.replace(" ","<br>")+'<small>KICK-OFF</small></div>'
+      +'<div class="ht-teams">'+teams+'</div>'
+      +'<span class="hp '+stCls+'">'+stTxt+'</span></div>';
+  }).join("");
+  el.innerHTML='<div class="ht-label"><span class="live-dot"></span>Today on TVJ · '
+    +rows.length+(rows.length===1?' match':' matches')+'</div>'
+    +'<div class="ht-grid">'+cards+'</div>';
+}
+fillHeroToday();
+
+function tick(){
+  // refresh target if the current next match has started
+  if(!NEXT || NEXT._dt.getTime() <= Date.now()){
+    NEXT=nextMatch();
+    fillNextHero(NEXT);
+  }
+  if(!NEXT){
+    ["cd-d","cd-h","cd-m","cd-s"].forEach(id=>document.getElementById(id).textContent="00");
+    return;
+  }
+  let diff=Math.floor((NEXT._dt.getTime()-Date.now())/1000);
+  if(diff<0) diff=0;
+  const d=Math.floor(diff/86400), h=Math.floor(diff%86400/3600),
+        m=Math.floor(diff%3600/60), s=diff%60;
+  document.getElementById("cd-d").textContent=String(d).padStart(2,"0");
+  document.getElementById("cd-h").textContent=String(h).padStart(2,"0");
+  document.getElementById("cd-m").textContent=String(m).padStart(2,"0");
+  document.getElementById("cd-s").textContent=String(s).padStart(2,"0");
+}
+
+// ---- listeners ----
 document.getElementById("search").addEventListener("input",e=>{q=e.target.value.toLowerCase().trim();render();});
-document.querySelectorAll(".fbtn").forEach(b=>b.addEventListener("click",()=>{
-  document.querySelectorAll(".fbtn").forEach(x=>x.classList.remove("on"));
+document.getElementById("f-date").addEventListener("change",e=>{fdate=e.target.value;render();});
+document.getElementById("f-stage").addEventListener("change",e=>{fstage=e.target.value;render();});
+document.getElementById("f-group").addEventListener("change",e=>{fgroup=e.target.value;render();});
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".chip").forEach(x=>x.classList.remove("on"));
   b.classList.add("on"); filter=b.dataset.f; render();
 }));
-render();
+
+render(); tick(); setInterval(tick,1000);
+
+// refresh ended/today states every minute without a reload
+setInterval(()=>{ render(); fillHeroToday();
+  if(!document.getElementById("sec-today").classList.contains("hidden")) renderToday();
+}, 60000);
+
+// today count badge on the tab
+(function(){
+  const n=DATA.filter(isToday).length;
+  const b=document.getElementById("today-count");
+  if(n>0){ b.textContent=n; b.classList.add("show"); }
+})();
 </script>
 </body>
 </html>
