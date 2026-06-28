@@ -149,10 +149,13 @@ select.fsel:focus{outline:none;border-color:var(--cyan)}
 
 /* ===== MATCH CARDS ===== */
 .daygroup{margin-bottom:24px}
-.dayhdr{display:flex;align-items:center;gap:12px;margin:0 0 12px;position:sticky;}
+.dayhdr{display:flex;align-items:center;gap:12px;margin:0 0 12px;position:sticky;cursor:pointer;user-select:none;}
 .dayhdr h3{font-size:13px;font-weight:800;letter-spacing:.5px;color:var(--yellow);
   text-transform:uppercase;white-space:nowrap;}
 .dayhdr .line{flex:1;height:1px;background:var(--line)}
+.dayhdr .chevron{font-size:11px;color:var(--muted);transition:transform .2s;flex-shrink:0;}
+.daygroup.collapsed .chevron{transform:rotate(-90deg);}
+.daygroup.collapsed .card{display:none;}
 .card{display:grid;grid-template-columns:62px 1fr auto;gap:14px;align-items:center;
   background:var(--card);border:1px solid var(--line);border-left:4px solid var(--line);
   border-radius:14px;padding:14px 16px;margin-bottom:9px;transition:.15s;}
@@ -386,6 +389,13 @@ function isToday(m){
       && jam.getUTCMonth()===now.getMonth()
       && jam.getUTCDate()===now.getDate();
 }
+function isPast(m){
+  const now=new Date();
+  const jam=new Date(m._dt.getTime()-5*3600*1000);
+  return jam.getUTCFullYear()<now.getFullYear()
+      ||(jam.getUTCFullYear()===now.getFullYear()&&jam.getUTCMonth()<now.getMonth())
+      ||(jam.getUTCFullYear()===now.getFullYear()&&jam.getUTCMonth()===now.getMonth()&&jam.getUTCDate()<now.getDate());
+}
 function isEnded(m){
   // match considered ended ~2h after kick-off (covers 90 mins + stoppage/half-time)
   return Date.now() > (m._dt.getTime() + 2*3600*1000);
@@ -433,8 +443,10 @@ function render(){
   rows.forEach(m=>{
     if(m.date!==last){
       if(last!=="") html+="</div>";
-      const todayTag = isToday(m) ? ' <span class="today-badge">TODAY</span>' : '';
-      html+='<div class="daygroup"><div class="dayhdr"><h3>'+m.date+todayTag+'</h3><div class="line"></div></div>';
+      const today=isToday(m);
+      const past=isPast(m)&&!today;
+      const todayTag = today ? ' <span class="today-badge">TODAY</span>' : '';
+      html+='<div class="daygroup'+(past?' collapsed':'')+'"><div class="dayhdr" onclick="this.parentElement.classList.toggle(\'collapsed\')"><h3>'+m.date+todayTag+'</h3><div class="line"></div><span class="chevron">▼</span></div>';
       last=m.date;
     }
     html+=cardHTML(m);
