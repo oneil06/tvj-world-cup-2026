@@ -163,17 +163,6 @@ select.fsel:focus{outline:none;border-color:var(--cyan)}
 .card.live{border-left-color:var(--green)}
 .card.delayed{border-left-color:var(--yellow)}
 .card.feat{box-shadow:0 0 0 1px rgba(247,212,23,.55)}
-.card.big{grid-template-columns:80px 1fr auto;padding:22px 22px;border-radius:18px;
-  border-left-width:6px;background:linear-gradient(135deg,rgba(247,212,23,.08),var(--card));
-  box-shadow:0 0 0 1px rgba(247,212,23,.4),0 8px 32px rgba(0,0,0,.4);}
-.card.big .kick .t{font-size:22px}
-.card.big .mid .teams{font-size:21px;font-weight:900;gap:12px}
-.card.big .flag{width:32px;height:22px}
-.card.big .vs{font-size:15px}
-.card.big .meta{font-size:13px;margin-top:8px}
-.card.big .pill{font-size:12px;padding:7px 16px}
-.card.big .btime{font-size:15px;font-weight:800}
-.card.big .lbl{font-size:11px}
 .card.istoday{box-shadow:0 0 0 2px var(--cyan), 0 0 22px rgba(0,174,239,.25);
   background:linear-gradient(180deg, rgba(0,174,239,.07), var(--card));}
 .card.ended{opacity:.5;filter:grayscale(.4);}
@@ -413,15 +402,14 @@ function isEnded(m){
 }
 function cardHTML(m){
   const cls=m.status==="LIVE"?"live":"delayed";
-  const feat=(m.match.indexOf("Haiti")>-1)?" feat":"";
-  const big=(m.no==="103"||m.no==="104")?" big":"";
+  const feat=(m.match==="THE FINAL"||m.match.indexOf("Haiti")>-1)?" feat":"";
   const td=isToday(m)?" istoday":"";
   const ended=isEnded(m);
   const endCls=ended?" ended":"";
   let badge="";
   if(ended) badge='<span class="ended-badge">ENDED</span>';
   else if(isToday(m)) badge='<span class="today-badge">TODAY</span>';
-  return '<div class="card '+cls+feat+big+td+endCls+'">'
+  return '<div class="card '+cls+feat+td+endCls+'">'
     +'<div class="kick"><div class="t">'+m.kick.replace(" ","<br>")+'</div><div class="l">KICK-OFF</div></div>'
     +'<div class="mid"><div class="teams">'+teamHTML(m.match)+' '+badge+'</div>'
       +'<div class="meta"><span><b>#'+m.no+'</b></span><span>'+m.rg+'</span>'
